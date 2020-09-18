@@ -1,0 +1,31 @@
+<div class="container-fluid p-2">
+    <h1 style="text-align: center;">Admin Dashboard</h1>
+    <a class="btn btn-secondary" style="margin-left:20%;" href="/moviepage/feedback"><i class="fas fa-plus"></i> Create New</a>
+    <div class="row justify-content-center p-2">
+    <table class="table table-striped" style="width:60%; text-align:center; border:3px solid grey">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each list}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.lastname}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.feedback}}</td>
+                <td>
+
+                    <a href="/moviepage/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this field ?);"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    </div>
+</div>
